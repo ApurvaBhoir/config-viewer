@@ -1,0 +1,25 @@
+<h2>Configuration Settings</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of configData | keyvalue">
+      <td>{{ item.key }}</td>
+      <td>
+        <ng-container *ngIf="isObject(item.value); else simpleValue">
+          <div *ngFor="let nestedItem of objectToKeyValue(item.value)" class="nested-value">
+            {{ nestedItem.key }}: {{ nestedItem.value }}
+          </div>
+        </ng-container>
+        <ng-template #simpleValue>
+          {{ item.value }}
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>

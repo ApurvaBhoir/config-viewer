@@ -1,0 +1,8 @@
+{
+    "setting1": "value1",
+    "setting2": "value2",
+    "setting3": {
+      "subSetting1": "subValue1",
+      "subSetting2": "subValue2"
+    }
+  }
